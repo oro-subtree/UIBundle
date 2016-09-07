@@ -1,4 +1,4 @@
-oro_system_configuration:
+system_configuration:
     groups:
         application_settings:
             icon:        icon-desktop
