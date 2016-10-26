@@ -6,34 +6,25 @@ define(function(require) {
     var Modal = require('oroui/js/modal');
 
     /**
-     * Delete confirmation dialog
+     * Standart confirmation dialog
      *
-     * @export  oroui/js/delete-confirmation
-     * @class   oroui.DeleteConfirmation
+     * @export  oroui/js/standart-confirmation
+     * @class   oroui.StandartConfirmation
      * @extends oroui.Modal
      */
     return Modal.extend({
 
         /** @property {String} */
-        template: require('text!oroui/templates/delete-confirmation.html'),
+        template: require('text!oroui/templates/standart-confirmation.html'),
 
         /** @property {String} */
-        className: 'modal oro-modal-danger',
+        className: 'modal oro-modal-normal',
 
         /** @property {String} */
         okButtonClass: 'btn-danger',
 
         /** @property {Boolean} */
         allowOk: true,
-
-        /** @property {String} */
-        okText: __('Yes, Delete'),
-
-        /** @property {String} */
-        title: __('Delete Confirmation'),
-
-        /** @property {String} */
-        cancelText: __('Cancel'),
 
         /**
          * @param {Object} options
@@ -46,9 +37,9 @@ define(function(require) {
             };
 
             options = _.extend({
-                title: this.title,
-                okText: this.okText,
-                cancelText: this.cancelText,
+                title: __('Confirmation'),
+                okText: __('Yes'),
+                cancelText: __('Cancel'),
                 template: _.template(this.template, interpolate),
                 allowOk: this.allowOk
             }, options);
